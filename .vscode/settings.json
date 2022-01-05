@@ -1,0 +1,24 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "flow.useNPMPackagedFlow": true,
+
+  "javascript.validate.enable": false,
+
+  "javascript.format.enable": false,
+
+  "json.format.enable": false,
+
+  "eslint.alwaysShowStatus": true,
+
+  "cSpell.words": ["Reactotron", "barakah"],
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  "files.associations": {
+    "*.js": "javascriptreact"
+  }
+}
