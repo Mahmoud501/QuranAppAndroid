@@ -3,6 +3,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import <React/RCTI18nUtil.h>
 
 #ifdef FB_SONARKIT_ENABLED
 #import <FlipperKit/FlipperClient.h>
@@ -42,12 +43,28 @@ static void InitializeFlipper(UIApplication *application) {
       rootView.backgroundColor = [UIColor whiteColor];
   }
 
-  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  UIViewController *rootViewController = [UIViewController new];
-  rootViewController.view = rootView;
-  self.window.rootViewController = rootViewController;
-  [self.window makeKeyAndVisible];
-  return YES;
+  //Handle AR in iOS
+    NSString *savedValue = [[NSUserDefaults standardUserDefaults]
+        stringForKey:@"langz"];
+    if([savedValue  isEqual: @"ar"]) {
+      [[RCTI18nUtil sharedInstance] allowRTL: YES];
+      [[RCTI18nUtil sharedInstance] forceRTL:YES];
+    }else {
+      [[RCTI18nUtil sharedInstance] allowRTL: NO];
+      [[RCTI18nUtil sharedInstance] forceRTL:NO];
+    }
+
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    UIViewController *rootViewController = [UIViewController new];
+    rootViewController.view = rootView;
+    self.window.rootViewController = rootViewController;
+    [self.window makeKeyAndVisible];
+    // Keep splash open while loading js app.
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LaunchScreen" bundle:[NSBundle mainBundle]];
+    UIViewController *launchScrenViewController = [storyboard instantiateViewControllerWithIdentifier:@"LaunchViewController"];
+    launchScrenViewController.view.frame = self.window.bounds;
+    rootView.loadingView = launchScrenViewController.view;
+    return YES;
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
