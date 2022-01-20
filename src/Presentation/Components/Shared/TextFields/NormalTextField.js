@@ -7,15 +7,15 @@ import AppConstants from '../../../../Infrastructure/Helper/Utils/AppConstants';
 
 const styles = ScaledSheet.create({
   img: {
-    width: '25@msr',
-    height: '25@msr',
+    width: '15@msr',
+    height: '15@msr',
     marginEnd: '10@msr',
     resizeMode: 'contain', // or 'stretch'
   },
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.transparent,
     overflow: 'hidden',
   },
   input: {
@@ -85,9 +85,13 @@ const NormalTextField = ({
           }}
           theme={{
             colors: {
-              text: Colors.darkblue ?? 'red',
-              placeholder: Colors.gray,
-              primary: isFocusd ? Colors.transparent : Colors.darkblue,
+              text: color ? color : Colors.black ?? 'red',
+              placeholder: color ? color : Colors.black,
+              primary: isFocusd
+                ? Colors.transparent
+                : color
+                ? color
+                : Colors.black,
             },
             fonts: {regular: {fontFamily: AppConstants.FONT1_REGULAR}},
           }}
@@ -151,9 +155,9 @@ const NormalTextField = ({
           }}
           theme={{
             colors: {
-              text: Colors.darkblue ?? 'red',
-              placeholder: Colors.gray,
-              primary: isFocusd ? Colors.transparent : Colors.darkblue,
+              text: Colors.black ?? 'red',
+              placeholder: Colors.black,
+              primary: isFocusd ? Colors.transparent : Colors.black,
             },
             fonts: {regular: {fontFamily: AppConstants.FONT1_REGULAR}},
           }}

@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import Styles from './Styles';
 import AppImages from '../../../../Infrastructure/Helper/Utils/AppImages';
 import {navigationRef} from '../../../../Presentation/navigation/RootNavigation';
-import {setLocale} from '../../../../Infrastructure/Helper/Utils/i18n';
+import {setLocale, strings} from '../../../../Infrastructure/Helper/Utils/i18n';
 import {
   getData,
   setData,
@@ -15,8 +15,10 @@ import {
 } from '../../../../Infrastructure/Helper/Utils/AppConstants';
 import UserUtils from '../../../../Infrastructure/Helper/Utils/UserUtils';
 import Colors from '../../../../Infrastructure/Helper/Utils/Colors';
-// import AppStack from '../../../navigation/AppStack';
+import AppStack from '../../../navigation/AppStack';
 import ActivityIndicator from '../../../Components/Shared/Loading/ActivityLoading';
+import {RPaperProgressBar} from '../../../Components/Shared/Lib/PaperComponents';
+import {ms} from 'react-native-size-matters';
 
 const SplashPage = ({navigation, route}) => {
   const [splash, SetSplash] = useState(true);
@@ -52,7 +54,7 @@ const SplashPage = ({navigation, route}) => {
       setLocale(isAppReady.appLang);
       setTimeout(() => {
         SetSplash(false);
-      }, 3000);
+      }, 1000);
     }
   }, [isAppReady]);
 
@@ -72,26 +74,31 @@ const SplashPage = ({navigation, route}) => {
     });
   };
 
-  //   const getBody = () => {
-  //     // if (isAppReady?.isFirstTime === true) {
-  //     if (isAppReady?.getUser && isAppReady?.getUser !== '0') {
-  //       return (
-  //         <NavigationContainer ref={navigationRef}>
-  //           <AppStack initialRouteName={'MainPage'} />
-  //         </NavigationContainer>
-  //       );
-  //     } else {
-  //       // and check login auth  withBack={false}
-  //       return (
-  //         <NavigationContainer ref={navigationRef}>
-  //           <AppStack
-  //             initialRouteName={'AuthStack'}
-  //             firstRoute={'LocationsPage'}
-  //           />
-  //         </NavigationContainer>
-  //       );
-  //     }
-  //   };
+  const getBody = () => {
+    // // if (isAppReady?.isFirstTime === true) {
+    // if (isAppReady?.getUser && isAppReady?.getUser !== '0') {
+    //   return (
+    //     <NavigationContainer ref={navigationRef}>
+    //       <AppStack initialRouteName={'MainPage'} />
+    //     </NavigationContainer>
+    //   );
+    // } else {
+    //   // and check login auth  withBack={false}
+    //   return (
+    //     <NavigationContainer ref={navigationRef}>
+    //       <AppStack
+    //         initialRouteName={'AuthStack'}
+    //         firstRoute={'LocationsPage'}
+    //       />
+    //     </NavigationContainer>
+    //   );
+    // }
+    return (
+      <NavigationContainer ref={navigationRef}>
+        <AppStack firstRoute={'LocationsPage'} />
+      </NavigationContainer>
+    );
+  };
 
   const getSplash = () => {
     if (splash) {
@@ -99,6 +106,12 @@ const SplashPage = ({navigation, route}) => {
         return (
           <View style={Styles.main}>
             <Image style={Styles.imgSplash} source={AppImages.splash} />
+            <Text style={Styles.lblStatus}>{strings('loading_quran')}</Text>
+            <RPaperProgressBar
+              progress={0.4}
+              color={Colors.c4}
+              style={{height: ms(5)}}
+            />
             <ActivityIndicator style={Styles.loading} color={Colors.darkblue} />
           </View>
         );
@@ -114,7 +127,7 @@ const SplashPage = ({navigation, route}) => {
         );
       }
     } else {
-      return <Text>fff</Text>; //getBody();
+      return getBody();
     }
   };
 

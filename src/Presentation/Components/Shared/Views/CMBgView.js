@@ -7,13 +7,6 @@ import Colors from '../../../../Infrastructure/Helper/Utils/Colors';
 const styles = StyleSheet.create({
   vuMain: {
     flex: 1,
-    backgroundColor: Colors.white,
-  },
-  vuBottom: {
-    position: 'absolute',
-    width: '100%',
-    bottom: 0,
-    backgroundColor: '#EDEDF5',
   },
 });
 // #endregion
@@ -21,15 +14,8 @@ const styles = StyleSheet.create({
 const CMBgView = ({children, style, img, bgColor, heightBottom}) => {
   return (
     <ImageBackground
-      source={img ?? AppImages.bg_logo}
+      source={img ?? AppImages.bg_shapes}
       style={[styles.vuMain, {...style}]}>
-      <View
-        style={[
-          styles.vuBottom,
-          {backgroundColor: bgColor ?? Colors.whisper},
-          {height: heightBottom ?? '30%'},
-        ]}
-      />
       {children}
     </ImageBackground>
   );

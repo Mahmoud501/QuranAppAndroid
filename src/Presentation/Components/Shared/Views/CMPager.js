@@ -12,12 +12,12 @@ const styles = ScaledSheet.create({
     marginHorizontal: '2@msr',
   },
   vuSelect: {
-    backgroundColor: Colors.pinky,
-    width: '15@msr',
+    backgroundColor: Colors.c4,
+    width: '8@msr',
   },
   vuNotSelect: {
     width: '8@msr',
-    backgroundColor: Colors.lightGray,
+    backgroundColor: Colors.c5,
   },
 });
 // #endregion

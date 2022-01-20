@@ -13,20 +13,28 @@ const styles = ScaledSheet.create({
     alignItems: 'center',
   },
   imgBack: {
-    width: '20@msr',
-    height: '15@msr',
+    width: '12@msr',
+    height: '20@msr',
   },
   lblBack: {
-    color: Colors.darkblue,
-    fontFamily: AppConstants.FONT1_REGULAR,
+    color: Colors.c4,
+    fontFamily: AppConstants.FONT1_BOLD,
     fontSize: '16@msr',
     height: '100%',
-    marginStart: '15@msr',
+    marginStart: '10@msr',
   },
 });
 // #endregion
 // take onBack or navigation but nessary take one of them
-const CMBackButton = ({style, onBack, navigation, title}) => {
+const CMBackButton = ({
+  style,
+  iconStyle,
+  onBack,
+  navigation,
+  title,
+  isHidden,
+  lblStyle,
+}) => {
   return (
     <TouchableOpacity
       style={[styles.vuMain, {...style}]}
@@ -38,14 +46,14 @@ const CMBackButton = ({style, onBack, navigation, title}) => {
         }
       }}>
       <Image
-        style={styles.imgBack}
+        style={[styles.imgBack, {...iconStyle}, {opacity: isHidden ? 0 : 1}]}
         source={
           getCurrentLocale() === 'ar'
-            ? AppImages.backRight_blue
-            : AppImages.backLeft_blue
+            ? AppImages.backRight_white
+            : AppImages.backLeft_white
         }
       />
-      {title && <Text style={styles.lblBack}>{title}</Text>}
+      {title && <Text style={[styles.lblBack, {...lblStyle}]}>{title}</Text>}
     </TouchableOpacity>
   );
 };

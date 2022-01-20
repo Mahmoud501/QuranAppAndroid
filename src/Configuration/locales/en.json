@@ -1,3 +1,31 @@
 {
-    "test": "test"
+"test": "test",
+"loading_quran": "Loading Quran",
+"gotit": "Let's Start now 🥰",
+"next": "Next",
+"intro_title_1": "Welcome to Quran App",
+"intro_title_2": "How to Memerize Quran",
+"intro_title_3": "Let's Start 😊😌",
+"intro_desc_1": "Quran app is simple application help people memorize holy quran",
+"intro_desc_2": "You will find easy application help you to that There is test in quran in different ways Also save and share your progress for encourage",
+"intro_desc_3": "Remember quran don't need your time Your Time need quran",
+"quran_app": "Quran App",
+"quran_app_captial": "QURAN APP",
+"register_title": "Please complete below options with your Favorite Settings.",
+"aslamualaikum": "Aslamualaikum",
+"name": "Name",
+"phone": "Phone",
+"age": "Age",
+"address": "Address",
+"save_start": "Save & Start",
+"skip": "Skip",
+"welcome": "Welcome",
+"select_reciter": "Select your favorite Reciter",
+"all": "All",
+"muratal": "Muratal",
+"mujawd": "Mujawd",
+"mu3lim": "Mualim",
+"translated": "Translate",
+"search_key": "Search"
+
 }

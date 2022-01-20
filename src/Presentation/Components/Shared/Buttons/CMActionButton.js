@@ -11,14 +11,13 @@ const styles = ScaledSheet.create({
     height: '57@msr',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: Colors.darkblue,
+    backgroundColor: Colors.c4,
     borderRadius: 12,
   },
   lblBack: {
     color: Colors.white,
     fontFamily: AppConstants.FONT1_MEDIUM,
     fontSize: '16@msr',
-    lineHeight: '22@msr',
   },
 });
 // #endregion

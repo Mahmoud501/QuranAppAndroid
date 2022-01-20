@@ -6,11 +6,7 @@ import {getCurrentLocale} from '../../../../Infrastructure/Helper/Utils/i18n';
 
 // #region Styles
 const styles = ScaledSheet.create({
-  vuMain: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-  },
+  vuMain: {},
   imgBack: {
     height: '100%',
     width: '100%',
@@ -18,9 +14,7 @@ const styles = ScaledSheet.create({
   },
   vuSliderContent: {},
   vuSliderPager: {
-    flex: 1,
     width: '100%',
-    marginTop: '15@msr',
   },
   vuSliderPagerContent: {
     flexGrow: 1,
@@ -29,7 +23,14 @@ const styles = ScaledSheet.create({
 });
 // #endregion
 
-const CMSliderView = ({data, CMItem, style, onChangeIndex, scrollIndex}) => {
+const CMSliderView = ({
+  data,
+  CMItem,
+  style,
+  onChangeIndex,
+  scrollIndex,
+  withoutPager,
+}) => {
   const {width} = useWindowDimensions();
 
   const [currentSliderPage, SetCurrentSliderPage] = useState(0);
@@ -47,13 +48,13 @@ const CMSliderView = ({data, CMItem, style, onChangeIndex, scrollIndex}) => {
   }, [currentSliderPage]);
 
   useEffect(() => {
-    if (scrollIndex) {
+    if (scrollIndex !== null && (data?.length ?? 0) > 0) {
       setTimeout(() => {
         console.log(`scroll to index fire to ${scrollIndex}`);
-
         scrollToIndex(scrollIndex);
-      }, 200);
+      }, 100);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scrollIndex]);
 
   //Logic
@@ -85,7 +86,7 @@ const CMSliderView = ({data, CMItem, style, onChangeIndex, scrollIndex}) => {
 
   // UIComponent
   const getSliderItem = (item, index) => {
-    return <View style={[{width: width}]}>{CMItem(item, index)}</View>;
+    return <View style={{width: width}}>{CMItem(item, index)}</View>;
   };
 
   const getSliderPagerItem = (object, index) => {
@@ -114,18 +115,20 @@ const CMSliderView = ({data, CMItem, style, onChangeIndex, scrollIndex}) => {
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
       />
-      <FlatList
-        ref={flatlistPagerRef}
-        style={styles.vuSliderPager}
-        contentContainerStyle={styles.vuSliderPagerContent}
-        data={data}
-        renderItem={({item, index}) => getSliderPagerItem(item, index)}
-        keyExtractor={item => `${item.id}`}
-        bounces={false}
-        horizontal={true}
-        showsVerticalScrollIndicator={false}
-        showsHorizontalScrollIndicator={false}
-      />
+      {!withoutPager && (
+        <FlatList
+          ref={flatlistPagerRef}
+          style={styles.vuSliderPager}
+          contentContainerStyle={styles.vuSliderPagerContent}
+          data={data}
+          renderItem={({item, index}) => getSliderPagerItem(item, index)}
+          keyExtractor={item => `${item.id}`}
+          bounces={false}
+          horizontal={true}
+          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
+        />
+      )}
     </View>
   );
 };

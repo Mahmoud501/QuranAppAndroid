@@ -9,7 +9,6 @@ import AppConstants from '../../../../Infrastructure/Helper/Utils/AppConstants';
 // #endregion
 //Bg = view with background Image
 const CMSegmentView = ({
-  style,
   onChange,
   selectedIndex,
   data,

@@ -5,12 +5,13 @@ const Colors: Object = {
   gray: 'gray',
   red: 'red',
   transparent: 'transparent',
-  darkblue: '#000066',
-  lightblue: '#D8DEFA',
-  lightGray: '#ABAFB65C',
-  alabaster: '#F9F9F9',
-  whisper: '#EDEDF5',
-  mantis: '#7ECE67',
+  c1: '#1FB59C',
+  c2: '#18B9CC',
+  c3: '#C2F9FF',
+  c4: '#007785',
+  c5: '#E8E8E8',
+  c6: '#F5F5F5',
+  c7: '#F3FAFA',
 };
 
 export default Colors;
