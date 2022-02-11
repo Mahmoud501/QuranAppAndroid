@@ -18,6 +18,11 @@ const AppImages: Object = {
   arrow_down: require('../../../Configuration/assets/arrow-down.png'),
   reciterTest: require('../../../Configuration/assets/NoPath.png'),
   search_icon: require('../../../Configuration/assets/ic_search_24px.png'),
+  main_icon: require('../../../Configuration/assets/Group33.png'),
+  test_icon: require('../../../Configuration/assets/New-Message-Icon.png'),
+  search_tab_icon: require('../../../Configuration/assets/Group-12.png'),
+  about_icon: require('../../../Configuration/assets/Icons-Top-Bar-Info.png'),
+  setting_icon: require('../../../Configuration/assets/ic_settings_24px.png'),
 };
 
 export default AppImages;

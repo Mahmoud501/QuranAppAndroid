@@ -15,13 +15,14 @@ import AppImages from '../../../../Infrastructure/Helper/Utils/AppImages';
 import Colors from '../../../../Infrastructure/Helper/Utils/Colors';
 
 const ReaderListPage = ({navigation, route}) => {
+  const isFromMenu = route?.params?.isFromMenu;
   // Set Deep state what mean deep that means all variable will be one object state rather than every variable in single state
-  const [dState, SetDState] = useState({});
+  const [dState, SetDState] = useState({isFromMenu: isFromMenu});
   // controller variables
   let [controller] = useState(new ReaderListController());
   controller.dState = dState;
   controller.SetDState = SetDState;
-
+  controller.navigation = navigation;
   // other variables
 
   //View Life Cycle

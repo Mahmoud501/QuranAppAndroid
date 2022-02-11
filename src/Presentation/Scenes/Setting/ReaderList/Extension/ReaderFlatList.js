@@ -3,6 +3,7 @@ import {FlatList} from 'react-native';
 import {ScaledSheet} from 'react-native-size-matters';
 // import Colors from '../../../../../Infrastructure/Helper/Utils/Colors';
 import ReaderItem from '../../../../Components/Screen/ReaderItem';
+import {replaceFromParent} from '../../../../../Infrastructure/Helper/Utils/NavigationUtils';
 
 const styles = ScaledSheet.create({
   vuList: {},
@@ -17,7 +18,17 @@ const ReaderFlatList = props => {
 
   //UI Component
   const getItem = (item, index) => {
-    return <ReaderItem />;
+    return (
+      <ReaderItem
+        onPress={() => {
+          if (controller?.dState?.isFromMenu) {
+            controller.navigation.goBack();
+          } else {
+            replaceFromParent(controller.navigation, 'AppTabbar');
+          }
+        }}
+      />
+    );
   };
   // Render UI Contain Screen
   return (

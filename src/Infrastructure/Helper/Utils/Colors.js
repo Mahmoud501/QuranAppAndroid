@@ -12,6 +12,7 @@ const Colors: Object = {
   c5: '#E8E8E8',
   c6: '#F5F5F5',
   c7: '#F3FAFA',
+  c8: '#C1C1C1',
 };
 
 export default Colors;
