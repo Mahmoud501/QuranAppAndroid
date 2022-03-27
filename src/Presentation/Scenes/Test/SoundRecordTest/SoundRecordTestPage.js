@@ -39,7 +39,7 @@ const SoundRecordTestPage = ({showDialog, onDismiss}) => {
                     {id: 1, title: strings('all')},
                   ]}
                   widthMenuStyle={Styles.txtDropDownWidth}
-                  style={[Styles.txtInput]}
+                  style={Styles.txtInput}
                   value={dState?.selectedSelection}
                   placeholder={strings('all')}
                   color={Colors.black}

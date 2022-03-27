@@ -48,6 +48,11 @@ const styles = ScaledSheet.create({
     height: '15@msr',
     marginHorizontal: '15@msr',
   },
+  vuLine: {
+    width: '100%',
+    height: '0.5@msr',
+    backgroundColor: Colors.lightGray,
+  },
 });
 
 const DropDownTextField = ({
@@ -80,11 +85,11 @@ const DropDownTextField = ({
         key={item?.id}
         style={{
           backgroundColor:
-            item?.id === value?.id ? Colors.lightblue : Colors.transparent,
+            item?.id === value?.id ? Colors.red : Colors.transparent,
         }}
         onPress={onPress2}>
         <Text style={styles.lblDropTitle}>{item?.title}</Text>
-        {!isLast && <Divider />}
+        {!isLast && <View style={styles.vuLine} />}
       </TouchOpactiyIndex>
     );
   };
@@ -118,14 +123,16 @@ const DropDownTextField = ({
           setVisible(false);
         }}
         anchor={textField()}>
-        <ScrollView>{getMenuItems()}</ScrollView>
+        <ScrollView style={{marginVertical: -10, backgroundColor: 'white'}}>
+          {getMenuItems()}
+        </ScrollView>
       </Menu>
     );
   };
 
   const textField = () => {
     return (
-      <View style={[styles.inputContainer, style]}>
+      <View style={[styles.inputContainer, {...style}]}>
         <View
           style={{
             flex: 1,
@@ -173,7 +180,7 @@ const DropDownTextField = ({
                   colors: {
                     text: Colors.black ?? 'red',
                     placeholder: Colors.gray,
-                    primary: isFocusd ? Colors.transparent : Colors.darkblue,
+                    primary: isFocusd ? Colors.transparent : Colors.black,
                   },
                   fonts: {regular: {fontFamily: AppConstants.FONT1_MEDIUM}},
                 }}

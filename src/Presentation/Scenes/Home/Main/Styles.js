@@ -84,7 +84,7 @@ export default ScaledSheet.create({
     marginTop: '10@msr',
     color: Colors.white,
     fontFamily: AppConstants.FONT1_BOLD,
-    fontSize: '25@msr',
+    fontSize: '20@msr',
     alignSelf: 'center',
   },
   btnQuranPDF: {

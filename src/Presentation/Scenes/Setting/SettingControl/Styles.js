@@ -53,8 +53,8 @@ export default ScaledSheet.create({
     borderWidth: 0.5,
     borderColor: Colors.gray,
     borderRadius: '8@msr',
-    marginBottom: '10@msr',
     backgroundColor: Colors.transparent,
+    marginBottom: '15@msr',
   },
   txtDropDownWidth: {
     width: '83%',

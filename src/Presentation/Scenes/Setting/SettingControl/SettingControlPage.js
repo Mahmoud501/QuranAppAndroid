@@ -64,7 +64,7 @@ const SettingControlPage = ({navigation, route}) => {
                   {id: 2, title: strings('no')},
                 ]}
                 widthMenuStyle={Styles.txtDropDownWidth}
-                style={[Styles.txtInput]}
+                style={Styles.txtInput}
                 value={dState?.selectedQuranMark}
                 placeholder={strings('want_quran_with_marks')}
                 color={Colors.black}
@@ -85,7 +85,7 @@ const SettingControlPage = ({navigation, route}) => {
                   {id: 2, title: strings('no')},
                 ]}
                 widthMenuStyle={Styles.txtDropDownWidth}
-                style={[Styles.txtInput]}
+                style={Styles.txtInput}
                 value={dState?.selectedSelection}
                 placeholder={strings('single_selection')}
                 color={Colors.black}
@@ -107,7 +107,7 @@ const SettingControlPage = ({navigation, route}) => {
                   {id: 3, title: strings('nothing')},
                 ]}
                 widthMenuStyle={Styles.txtDropDownWidth}
-                style={[Styles.txtInput]}
+                style={Styles.txtInput}
                 value={dState?.selectedAyahScroll}
                 placeholder={strings('home_scroll_ayah')}
                 color={Colors.black}
@@ -132,7 +132,7 @@ const SettingControlPage = ({navigation, route}) => {
                   {id: 6, title: strings('mushaf')},
                 ]}
                 widthMenuStyle={Styles.txtDropDownWidth}
-                style={[Styles.txtInput]}
+                style={Styles.txtInput}
                 value={dState?.selectedQuranFont}
                 placeholder={strings('quran_font')}
                 color={Colors.black}
@@ -154,7 +154,7 @@ const SettingControlPage = ({navigation, route}) => {
                   {id: 3, title: strings('large')},
                 ]}
                 widthMenuStyle={Styles.txtDropDownWidth}
-                style={[Styles.txtInput]}
+                style={Styles.txtInput}
                 value={dState?.selectedQuranFontSize}
                 placeholder={strings('quran_font_size')}
                 color={Colors.black}
@@ -176,7 +176,7 @@ const SettingControlPage = ({navigation, route}) => {
                   {id: 3, title: strings('large')},
                 ]}
                 widthMenuStyle={Styles.txtDropDownWidth}
-                style={[Styles.txtInput]}
+                style={Styles.txtInput}
                 value={dState?.selectedTafseerFontSize}
                 placeholder={strings('tafseer_font_size')}
                 color={Colors.black}

@@ -31,13 +31,19 @@ const styles = ScaledSheet.create({
     padding: '10@msr',
     textAlign: 'center',
   },
+  vuDialog: {
+    backgroundColor: Colors.white,
+  },
 });
 // #endregion
 
 const HomeSortDialog = ({showDialog, onDismiss, onPress}) => {
   return (
     <Portal>
-      <Dialog visible={showDialog} onDismiss={onDismiss}>
+      <Dialog
+        style={styles.vuDialog}
+        visible={showDialog}
+        onDismiss={onDismiss}>
         <View>
           <Text style={styles.lblTitle}>{strings('choose_home_option')}</Text>
           <CMActionButton

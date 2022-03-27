@@ -38,13 +38,19 @@ const styles = ScaledSheet.create({
     color: Colors.darkblue,
     fontFamily: AppConstants.FONT1_REGULAR,
   },
+  vuDialog: {
+    backgroundColor: Colors.white,
+  },
 });
 // #endregion
 
 const LangDialog = ({showDialog, onDismiss, onPress}) => {
   return (
     <Portal>
-      <Dialog visible={showDialog} onDismiss={onDismiss}>
+      <Dialog
+        style={styles.vuDialog}
+        visible={showDialog}
+        onDismiss={onDismiss}>
         <View>
           <CMActionButton
             style={getCurrentLocale() === 'ar' ? styles.btn : styles.btnCancel}

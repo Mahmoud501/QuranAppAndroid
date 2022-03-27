@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {ms} from 'react-native-size-matters';
-import {View, Text, LayoutAnimation} from 'react-native';
+import {View, Text, LayoutAnimation, UIManager, Platform} from 'react-native';
 import Styles from './Styles';
 import CMMainView from '../../../Components/Shared/Views/CMMainView';
 import {MainController} from './MainController';
@@ -38,6 +38,12 @@ const MainPage = ({navigation, route}) => {
 
   //View Life Cycle
   useEffect(() => {
+    if (
+      Platform.OS === 'android' &&
+      UIManager.setLayoutAnimationEnabledExperimental
+    ) {
+      UIManager.setLayoutAnimationEnabledExperimental(true);
+    }
     let listener = listenEvent(EVENT_TAB_HOME, data => {
       controller?.showSortDialog(true);
     });
@@ -62,7 +68,10 @@ const MainPage = ({navigation, route}) => {
   };
 
   const onSearchClicked = () => {
-    navigation.navigate('SearchTextPage');
+    // navigation.navigate('SearchTextPage');
+    showBasmalaView();
+    showCloseButton();
+    switchTabbar();
   };
 
   const onTafseerClicked = () => {
@@ -155,7 +164,7 @@ const MainPage = ({navigation, route}) => {
             {dState?.isShowBasmala && (
               <View style={Styles.vuBasmala}>
                 <View style={Styles.vuBasmalaLine} />
-                <Text style={Styles.lblBasmala}>﷽</Text>
+                <Text style={Styles.lblBasmala}>بسم الله الرحمن الرحيم</Text>
               </View>
             )}
           </View>

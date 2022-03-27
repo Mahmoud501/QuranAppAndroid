@@ -40,13 +40,19 @@ const styles = ScaledSheet.create({
     height: '0.5@msr',
     backgroundColor: Colors.lightGray,
   },
+  vuDialog: {
+    backgroundColor: Colors.white,
+  },
 });
 // #endregion
 
 const TestDialog = ({showDialog, onDismiss, onPress}) => {
   return (
     <Portal>
-      <Dialog visible={showDialog} onDismiss={onDismiss}>
+      <Dialog
+        style={styles.vuDialog}
+        visible={showDialog}
+        onDismiss={onDismiss}>
         <View>
           <Text style={styles.lblTitle}>{strings('test_title')}</Text>
           <View style={styles.vuWriteTest}>

@@ -23,14 +23,14 @@ const CMSegmentView = ({
       appearance="light"
       fontStyle={
         styleFont ?? {
-          color: Colors.darkblue,
+          color: Colors.white,
           fontFamily: AppConstants.FONT1_REGULAR,
           fontSize: ms(15),
         }
       }
       activeFontStyle={
         styleActiveFont ?? {
-          color: Colors.darkblue,
+          color: Colors.c4,
           fontFamily: AppConstants.FONT1_REGULAR,
           fontSize: ms(15),
         }

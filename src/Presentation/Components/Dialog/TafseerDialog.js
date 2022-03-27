@@ -13,13 +13,8 @@ import CMAyahTafseerItem from '../Screen/CMAyahTafseerItem';
 // #region Styles
 const styles = ScaledSheet.create({
   vuDialog: {
-    borderTopStartRadius: '15@msr',
-    borderTopEndRadius: '15@msr',
-    marginHorizontal: 0,
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
+    marginHorizontal: '10@msr',
+    backgroundColor: Colors.white,
   },
   vuBody: {},
   vuHeader: {},
@@ -95,7 +90,20 @@ const TafseerDialog = ({showDialog, onDismiss, onChangeTafseerPress}) => {
           </View>
           <FlatList
             style={styles.vuList}
-            data={[{id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}]}
+            data={[
+              {id: 1},
+              {id: 2},
+              {id: 3},
+              {id: 4},
+              {id: 5},
+              {id: 6},
+
+              {id: 7},
+
+              {id: 8},
+
+              {id: 9},
+            ]}
             renderItem={({item, index}) => getItem(item, index)}
             keyExtractor={item => `${item.id}`}
             bounces={true}

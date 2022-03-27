@@ -4,13 +4,8 @@ import {ScaledSheet} from 'react-native-size-matters';
 
 export default ScaledSheet.create({
   vuDialog: {
-    borderTopStartRadius: '15@msr',
-    borderTopEndRadius: '15@msr',
-    marginHorizontal: 0,
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
+    backgroundColor: Colors.white,
+    marginHorizontal: '10@msr',
   },
   vuBody: {},
   vuHeader: {},
@@ -29,6 +24,7 @@ export default ScaledSheet.create({
     color: Colors.darkGray,
     fontSize: '15@msr',
     marginEnd: '10@msr',
+    marginVertical: '8@msr',
   },
   btnIconClose: {
     width: '25@msr',
@@ -98,7 +94,7 @@ export default ScaledSheet.create({
     height: '40@msr',
     borderWidth: 0.5,
     borderColor: Colors.gray,
-    backgroundColor: Colors.transparent,
+    backgroundColor: Colors.white,
     width: '100@msr',
     borderRadius: '20@msr',
   },

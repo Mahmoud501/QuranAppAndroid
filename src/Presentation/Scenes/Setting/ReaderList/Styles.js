@@ -50,6 +50,7 @@ export default ScaledSheet.create({
     height: '35@msr',
     marginHorizontal: '10@msr',
     marginVertical: '10@msr',
+    backgroundColor: Colors.c4,
   },
   txtSearchInput: {
     borderWidth: 0.5,
