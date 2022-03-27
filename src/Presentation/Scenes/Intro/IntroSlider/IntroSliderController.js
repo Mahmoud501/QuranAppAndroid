@@ -56,8 +56,20 @@ export class IntroSliderPageController {
       (this.dState?.arrSlider?.length ?? 1) - 1
     ) {
       this.SetDState(pre => {
-        return {...pre, scrollTo: (this.dState.currentIndex ?? 0) + 1};
+        return {
+          ...pre,
+          scrollTo: (this.dState.currentIndex ?? 0) + 1,
+          disabledButton: true,
+        };
       });
+      setTimeout(() => {
+        this.SetDState(pre => {
+          return {
+            ...pre,
+            disabledButton: false,
+          };
+        });
+      }, 500);
     } else {
       this.gotitNaviagation();
     }

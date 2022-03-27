@@ -88,11 +88,12 @@ const ReaderListPage = ({navigation, route}) => {
               style={Styles.txtSearchInput}
             />
           </View>
-          <View style={Styles.vuHandleBottom} />
-          <ReaderFlatList
-            controller={controller}
-            headerView={getTableHeaderView()}
-          />
+          <View style={Styles.vuBody}>
+            <ReaderFlatList
+              controller={controller}
+              headerView={getTableHeaderView()}
+            />
+          </View>
         </CMMainView>
       </CMBgView>
     </CMGradientView>

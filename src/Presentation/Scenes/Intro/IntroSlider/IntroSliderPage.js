@@ -74,6 +74,7 @@ const IntroSliderPage = ({navigation, route}) => {
                   onBack={controller?.onPreivousClicked}
                 />
                 <CMActionButton
+                  disabled={dState?.disabledButton}
                   onPress={controller?.onNextClicked}
                   labelStyle={Styles.btnTextNext}
                   style={Styles.btnNext}

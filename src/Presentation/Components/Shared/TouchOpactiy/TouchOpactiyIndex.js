@@ -7,10 +7,11 @@ import TouchOpactiyIOS from './TouchOpactiyIOS';
 
 // #endregion
 
-const TouchOpactiyIndex = ({children, style, onPress, activeOpacity}) => {
+const TouchOpactiyIndex = ({children, style, onPress, activeOpacity,onLongPress}) => {
   if (Platform.OS == 'ios') {
     return (
       <TouchOpactiyIOS
+        onLongPress={onLongPress}
         activeOpacity={activeOpacity}
         onPress={onPress}
         style={style}>
@@ -20,6 +21,7 @@ const TouchOpactiyIndex = ({children, style, onPress, activeOpacity}) => {
   } else {
     return (
       <TouchOpacityAndroid
+        onLongPress={onLongPress}
         activeOpacity={activeOpacity}
         onPress={onPress}
         style={style}>

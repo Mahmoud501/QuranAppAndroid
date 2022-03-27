@@ -10,11 +10,11 @@ import AppImages from '../../Infrastructure/Helper/Utils/AppImages';
 import { strings } from '../../Infrastructure/Helper/Utils/i18n';
 import Colors from '../../Infrastructure/Helper/Utils/Colors';
 import { emitEvent, EVENT_TAB_HOME } from '../../Infrastructure/Helper/Utils/EventUtils';
-import TestPage from '../Scenes/Home/Test/TestPage';
-import AboutPage from '../Scenes/Home/About/AboutPage';
-import SettingPage from '../Scenes/Home/Setting/SettingPage';
-import SearchPage from '../Scenes/Home/Search/SearchPage';
-import AppDrawer from './AppDrawer';
+import AboutPage from '../Scenes/Setting/About/AboutPage';
+import SettingPage from '../Scenes/Setting/AppSetting/AppSettingPage';
+import SearchPage from '../Scenes/VoiceSearch/Search/VoiceSearchPage';
+import AppDrawer from '../Scenes/Home/SideMenu/AppDrawer';
+import TestResultPage from '../Scenes/Test/TestResult/TestResultPage';
 
  const Tab = createBottomTabNavigator();
 
@@ -65,8 +65,8 @@ import AppDrawer from './AppDrawer';
           />
            ),
         }}
-         name="TestPage"
-         component={TestPage}
+         name="TestResultPage"
+         component={TestResultPage}
        />
        <Tab.Screen
          options={{

@@ -11,7 +11,7 @@ import {Menu, Divider} from 'react-native-paper';
 
 const styles = ScaledSheet.create({
   img: {
-    marginEnd: '10@msr',
+    marginEnd: '15@msr',
     width: '15@msr',
     height: '15@msr',
     resizeMode: 'contain', // or 'stretch'
@@ -38,7 +38,7 @@ const styles = ScaledSheet.create({
   lblDropTitle: {
     fontFamily: AppConstants.FONT1_MEDIUM,
     fontSize: '15@msr',
-    color: Colors.darkblue,
+    color: Colors.black,
     paddingVertical: '10@msr',
     paddingHorizontal: '15@msr',
     textAlign: 'left',
@@ -171,7 +171,7 @@ const DropDownTextField = ({
                 }}
                 theme={{
                   colors: {
-                    text: Colors.darkblue ?? 'red',
+                    text: Colors.black ?? 'red',
                     placeholder: Colors.gray,
                     primary: isFocusd ? Colors.transparent : Colors.darkblue,
                   },
@@ -196,13 +196,13 @@ const DropDownTextField = ({
                     }
                   }
             }>
-            <Image style={styles.img} source={icon ?? AppImages.down_arrow} />
+            <Image style={styles.img} source={icon ?? AppImages.arrow_down} />
           </TouchOpactiyIndex>
 
           {loading && (
             <ActivityIndicator
               animating={true}
-              color={Colors.semiblue}
+              color={Colors.black}
               style={styles.activity}
             />
           )}

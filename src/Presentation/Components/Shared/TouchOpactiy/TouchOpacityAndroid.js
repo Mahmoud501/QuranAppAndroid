@@ -5,9 +5,10 @@ import {TouchableOpacity} from 'react-native';
 
 // #endregion
 
-const TouchOpacityAndroid = ({children, style, onPress, activeOpacity}) => {
+const TouchOpacityAndroid = ({children, style, onPress, activeOpacity, onLongPress}) => {
   return (
     <TouchableOpacity
+      onLongPress={onLongPress}
       activeOpacity={activeOpacity ?? 0}
       style={style}
       onPress={onPress}>

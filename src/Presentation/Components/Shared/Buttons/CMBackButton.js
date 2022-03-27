@@ -45,14 +45,17 @@ const CMBackButton = ({
           navigation.goBack();
         }
       }}>
-      <Image
-        style={[styles.imgBack, {...iconStyle}, {opacity: isHidden ? 0 : 1}]}
-        source={
-          getCurrentLocale() === 'ar'
-            ? AppImages.backRight_white
-            : AppImages.backLeft_white
-        }
-      />
+      {!isHidden && (
+        <Image
+          style={[styles.imgBack, {...iconStyle}, {opacity: isHidden ? 0 : 1}]}
+          source={
+            getCurrentLocale() === 'ar'
+              ? AppImages.backRight_white
+              : AppImages.backLeft_white
+          }
+        />
+      )}
+
       {title && <Text style={[styles.lblBack, {...lblStyle}]}>{title}</Text>}
     </TouchableOpacity>
   );

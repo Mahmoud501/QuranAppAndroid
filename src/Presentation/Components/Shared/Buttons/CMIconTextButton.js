@@ -21,20 +21,20 @@ const styles = ScaledSheet.create({
     marginEnd: '8@msr',
   },
   lblTitle: {
-    color: Colors.darkblue,
+    color: Colors.c4,
     fontSize: '16@msr',
     fontFamily: AppConstants.FONT1_REGULAR,
   },
 });
 // #endregion
 
-const CMIconTextButton = ({img, title, style, onPress}) => {
+const CMIconTextButton = ({img, title, style, contentStyle, onPress}) => {
   return (
     <View style={[styles.vuMain, {...style}]}>
       <TouchOpactiyIndex
         activeOpacity={0.3}
         onPress={onPress}
-        style={styles.vuTouchMain}>
+        style={[styles.vuTouchMain, {...contentStyle}]}>
         <Image style={styles.imgBack} source={img ?? AppImages.print} />
         <Text style={styles.lblTitle}>{title ?? 'test'}</Text>
       </TouchOpactiyIndex>

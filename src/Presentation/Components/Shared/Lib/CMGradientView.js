@@ -1,5 +1,4 @@
 import React from 'react';
-import {Text} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {ScaledSheet} from 'react-native-size-matters';
 import Colors from '../../../../Infrastructure/Helper/Utils/Colors';

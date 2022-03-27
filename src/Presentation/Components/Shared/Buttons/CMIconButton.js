@@ -1,6 +1,6 @@
 import React from 'react';
 import {ScaledSheet} from 'react-native-size-matters';
-import {Image} from 'react-native';
+import {Image, View} from 'react-native';
 import TouchOpactiyIndex from '../TouchOpactiy/TouchOpactiyIndex';
 
 // #region Styles
@@ -18,9 +18,11 @@ const styles = ScaledSheet.create({
 
 const CMIconButton = ({source, style, styleIcon, onPress}) => {
   return (
-    <TouchOpactiyIndex style={[styles.vuMain, {...style}]} onPress={onPress}>
-      <Image style={[styles.imgIcon, {...styleIcon}]} source={source} />
-    </TouchOpactiyIndex>
+    <View style={[styles.vuMain, {...style}]}>
+      <TouchOpactiyIndex activeOpacity={0.5} onPress={onPress}>
+        <Image style={[styles.imgIcon, {...styleIcon}]} source={source} />
+      </TouchOpactiyIndex>
+    </View>
   );
 };
 

@@ -26,6 +26,7 @@ export default ScaledSheet.create({
   },
   vuBody: {
     flex: 1,
+    backgroundColor: Colors.c6,
   },
   vuInfo: {
     flex: 1,
@@ -33,24 +34,18 @@ export default ScaledSheet.create({
   lblSubTitle: {
     marginTop: '5@msr',
     marginHorizontal: '10@msr',
-    color: Colors.white,
+    color: Colors.c4,
     fontFamily: AppConstants.FONT1_BOLD,
     fontSize: '18@msr',
   },
   lblDesc: {
     marginHorizontal: '10@msr',
-    color: Colors.white,
+    color: Colors.c4,
     fontFamily: AppConstants.FONT1_BOLD,
     fontSize: '16@msr',
     marginBottom: '25@msr',
   },
-  vuHandleBottom: {
-    position: 'absolute',
-    width: '100%',
-    height: '30%',
-    bottom: 0,
-    backgroundColor: Colors.c6,
-  },
+
   vuSegment: {
     height: '35@msr',
     marginHorizontal: '10@msr',
