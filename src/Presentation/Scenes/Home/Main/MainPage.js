@@ -17,6 +17,8 @@ import AppImages from '../../../../Infrastructure/Helper/Utils/AppImages';
 import CMIconButton from '../../../Components/Shared/Buttons/CMIconButton';
 import MainFlatList from './Extension/MainFlatList';
 import HomeSortDialog from '../../../Components/Dialog/HomeSortDialog';
+import {sqliteDatabase} from '../../../../Data/LocalDBRepo';
+import SQLite from 'react-native-sqlite-storage';
 
 const MainPage = ({navigation, route}) => {
   // Set Deep state what mean deep that means all variable will be one object state rather than every variable in single state
@@ -79,7 +81,32 @@ const MainPage = ({navigation, route}) => {
   };
 
   const onSettingClicked = () => {
-    navigation.navigate('SettingControlPage');
+    // navigation.navigate('SettingControlPage');
+    SQLite.openDatabase(
+      {
+        name: 'quran_data.db',
+        createFromLocation: '~quran_data.db',
+      },
+      db => {
+        console.info('Database::Database opened');
+        console.log('sucess');
+        db.transaction(tx => {
+          tx.executeSql('SELECT * FROM words LIMIT 0,30', [], (tx, results) => {
+            console.log('Query completed', results);
+            var len = results.rows.length;
+            for (let i = 0; i < len; i++) {
+              let row = results.rows.item(i);
+              console.log(
+                `Employee name: ${row.line}, Dept Name: ${row.simple}`,
+              );
+            }
+          });
+        });
+      },
+      err => {
+        console.log('err db' + err);
+      },
+    );
   };
 
   //UI Logic
